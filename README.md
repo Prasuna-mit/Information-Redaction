@@ -1,9 +1,29 @@
 # Information Redactor
 
-Sharing any informaion publicly may cause to misuse some personal or sensitive information. It is necessary to hide the sensitive information from being exposed to the public. 
-For these kinds of cases, information redacting helps in blocking only required information.
+Sharing any informaion publicly may cause to misuse some personal or sensitive information. It is necessary to hide the such information from being exposed to the public. 
+In such cases, information redacting helps in blocking only required information. I am going to walk you through the implement this idea in the coming sections. 
+
 
 In this project I am trying to implent an idea of blocking the 
+
+## Getting Started
+
+Before getting started please make sure to have python installed on your terminal. After that you need to create a local environment by pipenv. please refer the commands below:
+```
+pyenv install python 3.7.2
+pipenv --3.7.2
+
+```
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+### Structure of the tree
 ~~~ .
 ├── COLLABORATORS
 ├── LICENSE
@@ -33,19 +53,6 @@ In this project I am trying to implent an idea of blocking the
     ├── test_gender.py
     └── test_names.py
 ~~~
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
