@@ -101,9 +101,7 @@ def red_locations(file_read2):
     return locs,loc_count
 
 
-
-
-
+#
 
 
 
@@ -122,49 +120,25 @@ def red_locations(file_read2):
 #            redacted_sentence.append(token.string)
 #    return "".join(redacted_sentences)
 
-def red_names(ptext):
-    entity_names = []
-    final_file = []
-    total_data = ptext
-    for i in range(len(total_data)):
-        redaction_file = total_data[i]
-        sentences = nltk.sent_tokenize(redaction_file)
-        tokenized_sentences = [nltk.word_tokenize(sentence) for sentence in sentences]
-        tagged_sentences = [nltk.pos_tag(sentence) for sentence in tokenized_sentences]
-        chunked_sentences = nltk.ne_chunk_sents(tagged_sentences, binary = False)
-        for tree in chunked_sentences:
-            entity_names.extend(extract_entity_names(tree))
-        for e in entity_names:
-            redaction_file = redaction_file.replace(e,'██')
-            final_file.append(redaction_file)
-    return files_all
-   # names = []
-    # red_names_locs = document
-#    red_names = deepcopy(text)
- #   document = ' '.join([i for i in text.split() if i not in stop])
-  #  sentences = nltk.sent_tokenize(document)
-#    sentences = [nltk.word_tokenize(sent) for sent in sentences]
- #   sentences = [nltk.pos_tag(sent) for sent in sentences]
-    # print(sentences)
-  #  for tagged_sentence in sentences:
-        # print(tagged_sentence)
- #       for chunk in nltk.ne_chunk(tagged_sentence):
- #           if type(chunk) == nltk.tree.Tree:
- #               if(chunk.label() == 'PERSON'):
- #                   c1 = ' '.join([c1[0] for c1 in chunk])
- #                   names.append(c1)
- #                   b1 = "█"*(len(c1))
-  #                  red_names = red_names.replace(c1,b1)
-  #  return red_names,names
+#def red_names(ptext):
+#    entity_names = []
+#    final_file = []
+#    total_data = ptext
+#    for i in range(len(total_data)):
+#        redaction_file = total_data[i]
+#        sentences = nltk.sent_tokenize(redaction_file)
+#        tokenized_sentences = [nltk.word_tokenize(sentence) for sentence in sentences]
+#        tagged_sentences = [nltk.pos_tag(sentence) for sentence in tokenized_sentences]
+#        chunked_sentences = nltk.ne_chunk_sents(tagged_sentences, binary = False)
+#        for tree in chunked_sentences:
+#            entity_names.extend(extract_entity_names(tree))
+#        for e in entity_names:
+#            redaction_file = redaction_file.replace(e,'██')
+#            final_file.append(redaction_file)
+#    return files_all
+   
 
 
-
-#date
-def dates(data):
-    parsed_text = CommonRegex(data)
-    dates_list = parsed_text.dates
-
-    return data
 
 #def names_red(ptext):
  #   entity_names = []
@@ -183,5 +157,4 @@ def dates(data):
    #     final_file.append(redaction_file)
    # return final_file
 
-   
-    
+       

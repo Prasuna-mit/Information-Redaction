@@ -5,28 +5,7 @@ import glob
 import numpy
 from nltk.corpus import wordnet
 
-#a_list = []
-#a_list = sys.argv
-#i_path = [] 
-#o_path = ''
-#concept = ''
-#flags = []
-#stats_list = []
-#for i in range(len(a_list)):
-#    print(a_list[i])
-#    if a_list[i] == '--input':
-#        i_path.append(a_list[i+1])
-
- #   else:
- #       if a_list[i] == '--output':
- #       o_path = a_list[i+1]
- #   else:
- #       if a_list[i] == '--concept':
- #           concept = a_list[i+1]
-#for path in i_pathi:
- #   file = glob.glob(paths)
-  #  if n in flags 
-
+#for getting arguments
 user_arguments = sys.argv
 #print(user_arguments)        
 
@@ -64,12 +43,15 @@ main_file = redacted_loc
 print(lcount)
 print("locatiniedacted")
 
-#for i in range(len(user_arguments)):
- #   if user_arguments[i] == "--names":
-  #      read_file = main.names_red(ls)
-   #     print(read_file)
+#contact numbers
 
- #   else:
-  #      if user_arguments[i] == "--dates":
-  #          data = main.dates(read_file)
-  #          print(data)
+def redact_phones(ptext):
+    red = deepcopy(ptext)
+    phone = re.compile(r'''((?:(?<![\d-])(?:\+?\d{1,3}[-.\s*]?)?(?:\(?\d{3}\)?[-.\s*]?)?\d{3}[-.\s*]?\d{4}(?![\d-]))|(?:(?<![\d-])(?:(?:\(\+?\d{2}\))|(?:\+?\d{2}))\s*\d{2}\s*\d{3}\s*\d{4}(?![\d-])))''')
+    phones = re.findall(phone,ptext)
+    for j in phones:
+        b1 = "█"*(len(j))
+        red = red.replace(j,b1)
+    return red
+phone_red_file = redact_phones(ptext)
+phone_red_fil
