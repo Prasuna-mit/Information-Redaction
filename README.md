@@ -64,12 +64,26 @@ pipenv run python redactor.py --input '*.txt' \
                     --concept 'kids' \
                     --output 'files/' \
                     --stats stderr
-                    ```
+ ```
+ 
+The command line can take multiple flags at a time. The flags here are "input, output, names, gender, concept, stats'. Each flag serves its own purpose.
 
-A step by step series of examples that tell you how to get a development env running
+```input``` 
+This flag is basically meant for input file. In this project, I have taken all .txt and .md extended files and read it using "glob" package. Actually we are giving input through this argument to our functions.
 
-Say what the step will be
+```names```
 
+This is the redacted flag. Which means, we are intended to hide the names which are available in the collected files list from "input" flag.
+
+```gender```
+This flag is specifically to hide the genders. The detailed descripition will be discussed below while explaining the functions.
+
+```dates``'
+This flag indicates to hide the dates appear in the file.
+
+## Functions & Description:
+
+### Names: 
 ```
 Give the example
 ```
