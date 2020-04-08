@@ -78,42 +78,49 @@ This is the redacted flag. Which means, we are intended to hide the names which 
 ```gender```
 This flag is specifically to hide the genders. The detailed descripition will be discussed below while explaining the functions.
 
-```dates``'
+```dates```
 This flag indicates to hide the dates appear in the file.
 
 ## Functions & Description:
 
 ### Names: 
-```
-Give the example
-```
+This function takes a list file as an input and returns the output file with the names especially "PERSON" entity redacted. 
 
-And repeat
+### Dates:
+For this function, I am giving the redacted file for names as an input file. This function regacts the dates available in the file and returns additional redacted file.
 
-```
-until finished
-```
+### Location:
+This fuction takes file returned by the date function as an input and redacts the locations and then produces output as a file.
+
+### gender:
+For this function, I have manually fed a list of gender entities into a list and checked with the input file to see if there are any genders represented which match with the list. If so it replaces it with the block symbol.
+
+```Note``` : The above aa files have been redacted meaning whereever the specific labled information available in the document, that particular value will be replaced with the block symbol.
+
+### Concept: 
+This is moore like finding synonym in the file and making it block. Because the entities like this which represents nouns are also needs to be maintained confidential. For this purpose, the whole sentence which is having the synonymous word will be blocked. For this function, we must provide already redacted file to make the information more confidential.
+
+### stats:
+Stats function is to knowl what information hasbeen redacted and how many fileds have been redacted. I get this inforation during function execution only.
+
+### Output:
+The purpose of this function is, it extracts all the redacted data which is collected in lists and segregates it into its respective files and write the redacted information to a new file which is extended with .md
 
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Names:
+For this I have written test case to see if the expected number of blocks have been recorded or not
 
-### Break down into end to end tests
+Dates:
+This is also quite similar to the names().
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-pipenv 
+To run the test cases, see the below command
 
 ```
-Give an example
+pipenv run python -m pytest
+
 ```
 
 ## Storing in git
@@ -131,9 +138,11 @@ https://spacy.io/usage - helped in solving installation issue with spaCy
 You may requred to separate source environment and then deactivated it to install spacy into your local environment
 
 ## Limitations
-The flags in the command should be given in sequential order
-The file redundancy may happen
-You may not find all the features explained above
+The flags in the command should be given in sequential order.
+
+The file redundancy may happen.
+
+You may not find all the features explained above.
 
 ## Authors
 
