@@ -101,7 +101,28 @@ def red_locations(file_read2):
     return locs,loc_count
 
 
-#
+#gender
+
+def red_gender(file_read3):
+    # print(file_read)
+    genders_list=['he','she','him','her','his','hers','male','female','man','woman','men','women','He','She','Him','Her','His','Hers','Male','Female','Man','Woman','Men','Women','HE','SHE','HIM','HER','HIS','HERS','MALE','FEMALE','MAN','WOMAN','MEN','WOMEN']
+    gender = []
+    genders_file=[]
+    gcount = 0
+    new_string = []
+    for i in range(len(file_read3)):
+        data = nltk.word_tokenize(file_read3[i])
+        genders_file.append(data)
+
+    for i in genders_list:
+        for j in range(len(genders_file)):
+            genders_file[j] = ["██" if x == i else x for x in genders_file[j]]
+             
+
+    for i in range(len(genders_file)):
+        genders_file[i] = " ".join(genders_file[i])
+
+    return genders_file
 
 
 

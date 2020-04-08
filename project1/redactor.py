@@ -12,46 +12,46 @@ user_arguments = sys.argv
 for i in range(len(user_arguments)):
     if user_arguments[i] == "--input":
         read_file = main.read_arg(user_arguments[i+1])
-#print(len(read_file))
+print(len(read_file))
 main_file = read_file
 #names
 
 for i in range(len(user_arguments)):
-        if user_arguments[i] == "--names":
-            redacted_names,n_count = main.san_names(main_file)
-main_file = redacted_names
-#print(redacted_names)
+    if user_arguments[i] == "--names":
+        redacted_names,n_count = main.san_names(main_file)
+        print(redacted_names)
+#main_file2 = redacted_names
+#print(main_file)
 print("namesd redaction is done")
 print(n_count)
 
 #Dates
 for i in range(len(user_arguments)):
-        if user_arguments[i] == "--dates":
-            redacted_dates,d_count = main.red_dates(main_file)
-main_file = redacted_dates
-#print(redacted_dates)
+    if user_arguments[i] == "--dates":
+        redacted_dates,d_count = main.red_dates(redacted_names)
+main_file3 = redacted_dates
+print(redacted_dates)
 print("dates redacted")
 print(d_count)
 
 
 #Location
-
 for i in range(len(user_arguments)):
-        if user_arguments[i] == "--locations":
-            redacted_loc,lcount = main.red_locations(main_file)
-main_file = redacted_loc
+    if user_arguments[i] == "--locations":
+        redacted_loc,lcount = main.red_locations(main_file3)
+main_file4 = redacted_loc
+print(redacted_loc)
 print(lcount)
 print("locatiniedacted")
 
+#gender
+for i in range(len(user_arguments)):
+    if user_arguments[i] == "--gender":
+        redacted_gender = main.red_locations(main_file4)
+main_file5 = redacted_gender
+print(redacted_gender)
+print("gender redacted")
+
 #contact numbers
 
-def redact_phones(ptext):
-    red = deepcopy(ptext)
-    phone = re.compile(r'''((?:(?<![\d-])(?:\+?\d{1,3}[-.\s*]?)?(?:\(?\d{3}\)?[-.\s*]?)?\d{3}[-.\s*]?\d{4}(?![\d-]))|(?:(?<![\d-])(?:(?:\(\+?\d{2}\))|(?:\+?\d{2}))\s*\d{2}\s*\d{3}\s*\d{4}(?![\d-])))''')
-    phones = re.findall(phone,ptext)
-    for j in phones:
-        b1 = "█"*(len(j))
-        red = red.replace(j,b1)
-    return red
-phone_red_file = redact_phones(ptext)
-phone_red_fil
+
