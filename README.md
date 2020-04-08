@@ -1,10 +1,8 @@
 # Information Redactor
 
-Sharing any informaion publicly may cause to misuse some personal or sensitive information. It is necessary to hide the such information from being exposed to the public. 
-In such cases, information redacting helps in blocking only required information. I am going to walk you through the implement this idea in the coming sections. 
+Sharing any informaion publicly may cause to misuse some personal or sensitive information. It is necessary to hide the such information from being exposed to the public. For instance, a notice related to some transactions, some legal information etc,. In such cases, information redacting helps in blocking only required information. I am going to walk you through the implement this idea in the coming sections. 
 
-
-In this project I am trying to implent an idea of blocking the 
+In this project I tried to implent an idea of hiding the confidential information.
 
 ## Getting Started
 
@@ -12,18 +10,19 @@ Before getting started please make sure to have python installed on your termina
 ```
 pyenv install python 3.7.2
 pipenv --3.7.2
-
 ```
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Also, clone your git repository to push into git for future references by using the following command
 
 ```
-Give examples
+$git clone "link of your repository"
 ```
 
 ### Structure of the tree
+
+Below is the tree structure of required folders and files for the project. 
 ~~~ .
 ├── COLLABORATORS
 ├── LICENSE
@@ -53,6 +52,19 @@ Give examples
     ├── test_gender.py
     └── test_names.py
 ~~~
+Import all the essential packages like nltk, spacy, commonRegex, re, etc., into the local environment using:
+```pipenv install "package" ```
+
+## Command line
+The command at the command line argument looks something like 
+```
+pipenv run python redactor.py --input '*.txt' \
+                    --input 'otherfiles/*.md' \
+                    --names --dates \
+                    --concept 'kids' \
+                    --output 'files/' \
+                    --stats stderr
+                    ```
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -84,39 +96,36 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+pipenv 
 
 ```
 Give an example
 ```
 
-## Deployment
+## Storing in git
 
-Add additional notes about how to deploy this on a live system
+Once done with writing code, running test cases, and all, you will have to push the files to github. The commamnds below will help you to push or pull the files to or from github
+```
+git add file-name
+git commit -m "Message to be displayed in git"
+git push origin master
+git pull origin master
+```
+## Issues faced & Useful links to solve tthem 
+https://github.com/madisonmay/CommonRegex to installation and usage commoRegex
+https://spacy.io/usage - helped in solving installation issue with spaCy
+You may requred to separate source environment and then deactivated it to install spacy into your local environment
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+## Limitations
+The flags in the command should be given in sequential order
+The file redundancy may happen
+You may not find all the features explained above
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Prasuna Mitikiri** - *Initial work* - [PurpleBooth](https://github.com/Prasuna-mit/cs5293p19-project)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
